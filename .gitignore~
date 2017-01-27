@@ -1,0 +1,6 @@
+bin/
+*.jar
+*.tgz
+*.zip
+groovy/
+spec/
