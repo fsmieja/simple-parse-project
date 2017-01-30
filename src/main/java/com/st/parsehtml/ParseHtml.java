@@ -25,6 +25,7 @@ public class ParseHtml {
 	/**
 	 * @param args
 	 */
+	@SuppressWarnings("PMD.SystemPrintln")
 	public static void main(String[] args) {
 
 		if (args.length != 1) {
@@ -32,7 +33,7 @@ public class ParseHtml {
 			return;
 		}
 		
-		ParseHtml parse = new ParseHtml();
+		final ParseHtml parse = new ParseHtml();
 		System.out.println(parse.processRepoFile(args[0]));
 	}
 

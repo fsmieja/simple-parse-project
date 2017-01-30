@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<ruleset name="mybraces">
+ <description>Just the braces rules I like</description>
+ <rule ref="rulesets/braces.xml">
+  <exclude name="WhileLoopsMustUseBracesRule"/>
+  <exclude name="IfElseStmtsMustUseBracesRule"/>
+ </rule>
+</ruleset>
