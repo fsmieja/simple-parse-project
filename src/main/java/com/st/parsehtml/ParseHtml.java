@@ -9,6 +9,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
 
+
 /**
  * @author frank
  * Class ParseHtml takes in an HTML file and parses for table columns using
@@ -25,7 +26,6 @@ public class ParseHtml {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 		if (args.length != 1) {
 			System.out.println("Usage: parsehtml <filename>");
@@ -33,32 +33,42 @@ public class ParseHtml {
 		}
 		
 		ParseHtml parse = new ParseHtml();
-		parse.processRepoFile(args[0]);
+		System.out.println(parse.processRepoFile(args[0]));
 	}
 
-	public void processRepoFile(String fileName) {
+	public String processRepoFile(String fileName) {
+		String res="";
 		File input = new File(fileName);
-		try {
-			Document doc = Jsoup.parse(input, "ISO-8859-1", "http://example.com/");
-			
-			Elements table = doc.getElementsByTag("table");
-			Elements rows = table.get(0).getElementsByTag("tr");
-			for (Element row : rows) {
-				Elements cols = row.getElementsByTag("td");
-				if (cols.size() == 6) {
-					String repo = cols.get(0).getElementsByTag("a").get(0).text();
-					String date = cols.get(4).getElementsByTag("span").get(0).text();
-					if (tooLong(date)) {
-						int days = getNumberOfDays(date);
-   				  		System.out.println("Repo "+repo+": " + days + " days since last change");
-					}
+		Elements rows = getTableRowsFromFile(input);
+		for (Element row : rows) {
+			Elements cols = row.getElementsByTag("td");
+			if (cols.size() == 6) {
+				String repo = cols.get(0).getElementsByTag("a").get(0).text();
+				String date = cols.get(4).getElementsByTag("span").get(0).text();
+				if (tooLong(date)) {
+					int days = getNumberOfDays(date);
+					res += ("Repo "+repo+": " + days + " days since last change\n");
 				}
 			}
-		} catch (IOException e) {
-		    System.err.format("IOException: %s%n", e);
 		}
-
+		return res;
 	}
+	
+	public Elements getTableRowsFromFile(File input) {
+		Document doc;
+		try {
+			doc = Jsoup.parse(input, "ISO-8859-1", "http://example.com/");
+		}
+		catch (IOException e) {
+			System.out.println("Error getting DOM from file: "+e.getMessage());
+			return null;
+		}
+		
+		Elements table = doc.getElementsByTag("table");
+		Elements rows = table.get(0).getElementsByTag("tr");
+		return rows;
+	}
+	
 	public String processHtml(String html) {
 		
 		
