@@ -33,7 +33,7 @@ public class ParseHtmlTest {
 
 	@Test
 	public final void testProcessHtml1() {
-		String html = "<div class='list2'><div class='age4'/><div class='age3'/></div>";
+		String html = "<div class='list2'><div class='age4'/><div class='age4'/></div>";
 		String res = parse.processHtml(html);
 		
 		assertNull(res);
@@ -42,7 +42,7 @@ public class ParseHtmlTest {
 	
 	@Test
 	public final void testProcessHtml2() {
-		String html = "<div class='list'><div class='age4'/><div class='age4'/></div>";
+		String html = "<div class='list'><div class='age4'/><div class='age3'/></div>";
 		String res = parse.processHtml(html);
 		
 		assertNotNull(res);
