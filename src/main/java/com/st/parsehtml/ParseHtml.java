@@ -22,12 +22,15 @@ import org.jsoup.select.Elements;
  */
 public class ParseHtml {
 
+	private String str;
+
 	/**
 	 * @param args
 	 */
 	@SuppressWarnings("PMD.SystemPrintln")
 	public static void main(String[] args) {
 
+		
 		if (args.length != 1) {
 			System.out.println("Usage: parsehtml <filename>");
 			return;
