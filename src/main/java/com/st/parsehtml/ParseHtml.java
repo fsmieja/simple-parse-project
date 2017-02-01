@@ -22,7 +22,7 @@ import org.jsoup.select.Elements;
  */
 public class ParseHtml {
 
-	private String str;
+//	private String str;
 
 	/**
 	 * @param args
