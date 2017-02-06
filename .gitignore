@@ -3,3 +3,8 @@ groovy/
 spec/
 output/
 target/
+.classpath
+.eclipse-pmd
+.project
+.settings
+build/
