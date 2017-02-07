@@ -41,9 +41,10 @@ public class ParseHtml {
 
     /*
      * process the file
-     *
+     * 
      * @fileName - name of the file
      */
+
     final public String processRepoFile(final String fileName) {
         final StringBuffer res = new StringBuffer("");
         final File input = new File(fileName);
@@ -78,7 +79,7 @@ public class ParseHtml {
             doc = Jsoup.parse(input, "ISO-8859-1", "http://example.com/");
         } catch (final IOException e) {
             System.out
-            .println("Error getting DOM from file: " + e.getMessage());
+                    .println("Error getting DOM from file: " + e.getMessage());
             return null;
         }
 
