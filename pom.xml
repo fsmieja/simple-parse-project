@@ -73,16 +73,6 @@
 						<goals>
 							<goal>check</goal>
 						</goals>
-						<configuration>
-							<checkstyleRules>
-								<module name="Checker">
-									<module name="FileTabCharacter">
-										<property name="eachLine" value="false" />
-
-									</module>
-								</module>
-							</checkstyleRules>
-						</configuration>
 					</execution>
 				</executions>
 
@@ -94,7 +84,6 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
-
 		</dependency>
 		<dependency>
 			<groupId>org.jsoup</groupId>
