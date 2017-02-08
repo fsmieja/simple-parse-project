@@ -15,6 +15,9 @@
     <version>2.19.1</version>
     <configuration>
     <forkMode>always</forkMode>
+    <includes>
+            <include>TestParseHtml.java</include>
+          </includes>
     </configuration>
     <dependencies>
       <dependency>
