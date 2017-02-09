@@ -158,7 +158,7 @@
 				<reportSets>
 					<reportSet>
 						<reports>
-							<report>checkstyle</report>
+							<report>findbugs</report>
 						</reports>
 					</reportSet>
 				</reportSets>
@@ -183,7 +183,7 @@
 				<reportSets>
 					<reportSet>
 						<reports>
-							<report>checkstyle</report>
+							<report>pmd</report>
 						</reports>
 					</reportSet>
 				</reportSets>
